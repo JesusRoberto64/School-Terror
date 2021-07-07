@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://UI/BackMenuButton.tscn" type="PackedScene" id=1]
+
+[node name="Controls_Objective" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 222.0
+margin_top = 56.0
+margin_right = 628.0
+margin_bottom = 218.0
+text = "Controls:
+
+This game uses the standard FPS controls for mouse and keyboard input:
+
+WASD - Move Player Character
+Left Mouse - Attack/Fire Bow
+Scroll Mousewheel: Swap Weapons
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 216.0
+margin_top = 218.0
+margin_right = 622.0
+margin_bottom = 462.0
+text = "Objective:
+
+This is a fast paced combat game, enemies will come at  you quick and shoot a lot of bullets at you at a fast pace. Try to survive as long as you can. Press R for restasting in case you die in the game. 
+
+You start the game with only an aztec blade to defend yourself with. There is a bow that shoots magic-explosive arrows at the enemies but you will have to find it. Also, the bow has limited arrows with no restocks, so try to manage your them wisely.
+
+Finally, you can die by your own explosions, so BE CAREFUL!  "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" parent="." instance=ExtResource( 1 )]
+margin_left = 671.424
+margin_top = 500.565
+margin_right = 765.424
+margin_bottom = 551.565
+reference_path = "res://MainMenu.tscn"

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/balazo2.wav-47895dc4074f1b432371548884a8d2ad.sample"
+
+[deps]
+
+source_file="res://SFX/Foleys/balazo2.wav"
+dest_files=[ "res://.import/balazo2.wav-47895dc4074f1b432371548884a8d2ad.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

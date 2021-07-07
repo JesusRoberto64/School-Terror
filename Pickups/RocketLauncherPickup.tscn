@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://weapons/raw_assets/rocketlauncher.glb" type="PackedScene" id=1]
+[ext_resource path="res://Pickups/Pickup.gd" type="Script" id=2]
+[ext_resource path="res://weapons/raw_assets/Teoyotl Weapons/Old Bow w_o arms.tscn" type="PackedScene" id=3]
+[ext_resource path="res://weapons/raw_assets/Teoyotl Weapons/Magic Arrow.tscn" type="PackedScene" id=4]
+
+[sub_resource type="SphereShape" id=1]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Spin"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Graphics:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
+}
+
+[node name="RocketLauncherPickup" type="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 2 )
+pickup_type = 4
+ammo = 4
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Spin"
+anims/Spin = SubResource( 2 )
+
+[node name="Graphics" type="Spatial" parent="."]
+transform = Transform( -0.460546, 0, 0.887636, 0, 1, 0, -0.887636, 0, -0.460546, 0, 0, 0 )
+
+[node name="Arrow magic" parent="Graphics" instance=ExtResource( 4 )]
+transform = Transform( 0.48671, 0, 7.45058e-08, 0, 0.48671, 0, -7.45058e-08, 0, 0.48671, 0, 0.223621, 0 )
+
+[node name="rocketlauncher" parent="Graphics" instance=ExtResource( 1 )]
+transform = Transform( 0.282262, 0, 2.23517e-08, 0, 0.282262, 0, -2.23517e-08, 0, 0.282262, 0, 0, 0 )
+visible = false
+
+[node name="Old Bow w_o arms" parent="Graphics" instance=ExtResource( 3 )]
+transform = Transform( 0.366054, 0, 2.98023e-08, 0, 0.366054, 0, -2.98023e-08, 0, 0.366054, 0, 0, 0 )
+
+[node name="OmniLight" type="OmniLight" parent="Graphics"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.340691, 0 )
+light_color = Color( 0.27451, 0.941176, 0.992157, 1 )

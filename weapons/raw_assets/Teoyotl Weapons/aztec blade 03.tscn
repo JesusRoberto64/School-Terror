@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://weapons/raw_assets/Teoyotl Weapons/aztec blade 03.glb" type="PackedScene" id=1]
+
+[node name="aztec blade 03" instance=ExtResource( 1 )]

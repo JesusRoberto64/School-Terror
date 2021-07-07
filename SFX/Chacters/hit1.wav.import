@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/hit1.wav-5732a3c1f91526beec5e3065ef630638.sample"
+
+[deps]
+
+source_file="res://SFX/Chacters/hit1.wav"
+dest_files=[ "res://.import/hit1.wav-5732a3c1f91526beec5e3065ef630638.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

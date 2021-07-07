@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/MenuButton.gd" type="Script" id=1]
+[ext_resource path="res://UI/Teoyotl_menuSys/back_black.png" type="Texture" id=2]
+[ext_resource path="res://UI/Teoyotl_menuSys/back_wth.png" type="Texture" id=3]
+
+[node name="Back" type="TextureButton"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )
+texture_hover = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Effects/raw_assets/fire_1.png" type="Texture" id=1]
+
+[sub_resource type="SpatialMaterial" id=8]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="Gradient" id=9]
+offsets = PoolRealArray( 0, 0.198198, 1 )
+colors = PoolColorArray( 0, 0, 0, 0, 0.214844, 0.203094, 0.203094, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=10]
+gradient = SubResource( 9 )
+
+[sub_resource type="ParticlesMaterial" id=11]
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 1.0
+gravity = Vector3( 0, 0, 0 )
+angular_velocity = 30.0
+angular_velocity_random = 1.0
+linear_accel = 4.0
+angle = 360.0
+angle_random = 1.0
+scale = 2.0
+scale_random = 0.5
+color_ramp = SubResource( 10 )
+
+[sub_resource type="QuadMesh" id=12]
+
+[node name="Smoke" type="Particles"]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 0 )
+material_override = SubResource( 8 )
+amount = 32
+lifetime = 3.0
+process_material = SubResource( 11 )
+draw_pass_1 = SubResource( 12 )

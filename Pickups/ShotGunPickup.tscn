@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://weapons/raw_assets/shotgun.glb" type="PackedScene" id=1]
+[ext_resource path="res://Pickups/Pickup.gd" type="Script" id=2]
+
+[sub_resource type="SphereShape" id=1]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Spin"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Graphics:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
+}
+
+[node name="ShotGunPickup" type="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 2 )
+pickup_type = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Spin"
+anims/Spin = SubResource( 2 )
+
+[node name="Graphics" type="Spatial" parent="."]
+transform = Transform( 0.608971, 0, 0.793193, 0, 1, 0, -0.793193, 0, 0.608971, 0, 0, 0 )
+
+[node name="shotgun" parent="Graphics" instance=ExtResource( 1 )]
+transform = Transform( 0.371322, 0, 1.49012e-08, 0, 0.371322, 0, -1.49012e-08, 0, 0.371322, 1.86265e-08, 0, 0.114897 )

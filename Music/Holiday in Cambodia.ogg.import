@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Holiday in Cambodia.ogg-c7cd4c6928c451ccaf57fa126a59aba6.oggstr"
+
+[deps]
+
+source_file="res://Music/Holiday in Cambodia.ogg"
+dest_files=[ "res://.import/Holiday in Cambodia.ogg-c7cd4c6928c451ccaf57fa126a59aba6.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

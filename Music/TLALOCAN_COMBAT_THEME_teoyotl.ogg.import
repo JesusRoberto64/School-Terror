@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/TLALOCAN_COMBAT_THEME_teoyotl.ogg-049cc1e19222329bfa0c9a92e582d750.oggstr"
+
+[deps]
+
+source_file="res://Music/TLALOCAN_COMBAT_THEME_teoyotl.ogg"
+dest_files=[ "res://.import/TLALOCAN_COMBAT_THEME_teoyotl.ogg-049cc1e19222329bfa0c9a92e582d750.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

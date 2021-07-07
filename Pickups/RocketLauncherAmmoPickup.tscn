@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Pickups/raw_assets/rocket.glb" type="PackedScene" id=1]
+[ext_resource path="res://Pickups/Pickup.gd" type="Script" id=2]
+
+[sub_resource type="SphereShape" id=1]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Spin"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Graphics:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
+}
+
+[node name="RocketLauncherAmmoPickup" type="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 2 )
+pickup_type = 5
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Spin"
+anims/Spin = SubResource( 2 )
+
+[node name="Graphics" type="Spatial" parent="."]
+transform = Transform( -0.422823, 0, -0.906212, 0, 1, 0, 0.906212, 0, -0.422823, 0, 0, 0 )
+
+[node name="rocket" parent="Graphics" instance=ExtResource( 1 )]
+transform = Transform( 0.527324, 0, 5.96046e-08, 0, 0.527325, 0, -5.96046e-08, 0, 0.527324, 0, -0.131245, 0 )
+
+[node name="rocket2" parent="Graphics" instance=ExtResource( 1 )]
+transform = Transform( 0.527324, 0, 7.45058e-08, 0, 0.527325, 0, -7.45058e-08, 0, 0.527324, 0.210005, -0.297504, -3.72529e-08 )
+
+[node name="rocket3" parent="Graphics" instance=ExtResource( 1 )]
+transform = Transform( 0.527324, 0, 4.47035e-08, 0, 0.527325, 0, -4.47035e-08, 0, 0.527324, -0.199103, -0.269503, 7.45058e-09 )

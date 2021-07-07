@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Effects/raw_assets/ash_part.png" type="Texture" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_unshaded = true
+params_blend_mode = 1
+params_cull_mode = 2
+params_billboard_mode = 2
+albedo_color = Color( 0.407843, 0.407843, 0.407843, 1 )
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=2]
+emission_shape = 2
+emission_box_extents = Vector3( 30, 30, 30 )
+spread = 103.27
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 15.0
+initial_velocity_random = 1.0
+scale_random = 1.0
+hue_variation = 0.35
+
+[sub_resource type="PlaneMesh" id=3]
+
+[node name="Particles " type="Spatial"]
+
+[node name="Ashes" type="Particles" parent="."]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0 )
+material_override = SubResource( 1 )
+amount = 50
+visibility_aabb = AABB( -52.108, -89.817, -80.4047, 91.3956, 179.178, 158.967 )
+process_material = SubResource( 2 )
+draw_pass_1 = SubResource( 3 )

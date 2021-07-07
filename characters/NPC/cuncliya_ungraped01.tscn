@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://characters/NPC/cuncliya_ungraped.glb" type="PackedScene" id=1]
+[ext_resource path="res://characters/NPC/Texture.material" type="Material" id=2]
+[ext_resource path="res://characters/NPC/bullet_damge.gd" type="Script" id=3]
+[ext_resource path="res://characters/NPC/NPC.gd" type="Script" id=4]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 1.17353
+height = 2.61698
+
+[node name="cuncliya_ungraped" instance=ExtResource( 1 )]
+script = ExtResource( 4 )
+
+[node name="Human_Mesh" parent="Human Armature/Skeleton" index="0"]
+material/0 = ExtResource( 2 )
+
+[node name="area" type="Area" parent="Human Armature/Skeleton/Human_Mesh" index="0"]
+script = ExtResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Human Armature/Skeleton/Human_Mesh/area" index="0"]
+transform = Transform( 0.94342, -3.95301e-08, -0.331601, 3.953e-08, 1, -6.74523e-09, 0.331602, -6.7446e-09, 0.94342, 0.52555, -0.0715492, -2.09079 )
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "cunclill_loop"
+[connection signal="killed" from="Human Armature/Skeleton/Human_Mesh/area" to="." method="_on_area_killed"]
